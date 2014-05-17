@@ -7,7 +7,7 @@ function fb(){
 
 #Renames a function
 #Usage: save_function function_name new_function_name
-function save_function() { test
+function save_function() {
     local ORIG_FUNC=$(declare -f $1)
     local NEWNAME_FUNC="$2${ORIG_FUNC#$1}"
     eval "$NEWNAME_FUNC"
