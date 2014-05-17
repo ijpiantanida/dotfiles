@@ -1,1 +1,2 @@
 ln -s "/Users/ignacio/projects/dotfiles///.bash_alias" "/Users/ignacio/.bash_alias"
+ln -s "/Users/ignacio/projects/dotfiles///.bash_functions" "/Users/ignacio/.bash_functions"
