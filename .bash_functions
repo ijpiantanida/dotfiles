@@ -34,6 +34,8 @@ function oldit(){
   mv "$1" "$1.old"
 }
 
+#Moves any file to the DOTFILES_DIR creating a symlink and starts tracking it with git
+#Usage: dotit file_name [destination_path]
 function dotit(){
   original_dir=$(pwd)
   dotfiles_git_dir=$DOTFILES_DIR
