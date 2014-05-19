@@ -36,7 +36,7 @@ function oldit(){
 
 function dotit(){
   original_dir=$(pwd)
-  dotfiles_git_dir="/Users/ignacio/projects/dotfiles/"
+  dotfiles_git_dir=$DOTFILES_DIR
   destination="$dotfiles_git_dir/$2"
   mkdir -p $destination
   full_path=$(pwd)/"$1"
