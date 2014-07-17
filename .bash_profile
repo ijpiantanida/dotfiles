@@ -8,7 +8,13 @@ source ~/.ssh-completion.bash
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
-PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[34m\][\w]\[\033[0m\]\n@\h\$ "
+function _git_prompt(){
+	if git rev-parse 2> /dev/null; then
+		echo "($(git rev-parse --abbrev-ref HEAD))"
+	fi
+}
+
+PS1='\[\e]0;\u@\h: \w\a\]\[\033[34m\][\w]\[\033[0m\] \[\033[32m\]$(_git_prompt)\[\033[0m\]\n@\h\$ '
 ssh-add ~/.ssh/id_scalarium_user_ignaciopiantanida 2> /dev/null
 
 export DOTFILES_DIR="/Users/ignacio/projects/dotfiles/"
