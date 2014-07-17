@@ -10,7 +10,10 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 
 function _git_prompt(){
 	if git rev-parse 2> /dev/null; then
-		echo "($(git rev-parse --abbrev-ref HEAD))"
+		if ! git diff-index --quiet HEAD --; then
+    		local changes="*"
+		fi
+		echo "($(git rev-parse --abbrev-ref HEAD)${changes})"
 	fi
 }
 
