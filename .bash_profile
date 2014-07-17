@@ -18,3 +18,9 @@ PS1='\[\e]0;\u@\h: \w\a\]\[\033[34m\][\w]\[\033[0m\] \[\033[32m\]$(_git_prompt)\
 ssh-add ~/.ssh/id_scalarium_user_ignaciopiantanida 2> /dev/null
 
 export DOTFILES_DIR="/Users/ignacio/projects/dotfiles/"
+
+#history setup
+export HISTCONTROL=ignoredups:erasedups
+export HISTSIZE=100000
+export HISTFILESIZE=100000
+shopt -s histappend
