@@ -17,7 +17,8 @@ function _git_prompt(){
 	fi
 }
 
-PS1='\[\e]0;\u@\h: \w\a\]\[\033[34m\][\w]\[\033[0m\] \[\033[32m\]$(_git_prompt)\[\033[0m\]\n@\h\$ '
+PS1='\[\e]0;\u@\h: \w\a\]\[\033[34m\][\w]\[\033[0m\]\[\033[32m\]$(_git_prompt)\[\033[0m\] | $(date +%H:%M:%S)\n@\h\$ '
+
 ssh-add ~/.ssh/id_scalarium_user_ignaciopiantanida 2> /dev/null
 
 export DOTFILES_DIR="/Users/ignacio/projects/dotfiles/"
