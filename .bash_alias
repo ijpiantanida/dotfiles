@@ -1,0 +1,33 @@
+alias gs="git status"
+alias gd="git diff"
+alias ga="git add"
+alias gdc="git diff --cached"
+alias gm="git commit"
+alias gl="git lg"
+alias gf="git fetch"
+alias gp="git push"
+
+alias ll="ls -al"
+
+alias rtest="RAILS_ENV=test "
+alias rd="ARR_CYCLES_DISABLE=1 rake device install_only=1 hockeyapp=false"
+
+alias ttd="termit 'de' 'en' "
+
+alias payango="cd ~/projects/payango"
+alias phrase_pull="phrase pull --format=strings --target resources/"
+alias phrase_push_en="phrase push resources/en.lproj/Localizable.strings --locale=en"
+alias phrase_push_de="phrase push resources/de.lproj/Localizable.strings --locale=de"
+alias sim_small="ARR_CYCLES_DISABLE=1 rake retina=3.5 skip_dsym=1"
+alias sim="ARR_CYCLES_DISABLE=1 rake skip_dsym=1"
+alias build_distribution="ARR_CYCLES_DISABLE=1 env=distribution apple_env=distribution rake archive:distribution hockey"
+
+alias ssh_staging="change_tab_color 151 134 255 && ssh -i ~/.ssh/id_rsa ipiantanida@$STAGING_IP"
+alias ssh_backend="change_tab_color 255 107 84 && ssh -i ~/.ssh/id_rsa ipiantanida@$BACKEND_IP"
+alias ssh_api="change_tab_color 168 187 0 && ssh -i ~/.ssh/id_rsa ipiantanida@$API_IP"
+alias ssh_admin="change_tab_color 90 187 0 && ssh -i ~/.ssh/id_rsa ipiantanida@$ADMIN_IP"
+alias ssh_endpoint="change_tab_color 12 187 80 && ssh -i ~/.ssh/id_rsa ipiantanida@$ENDPOINT_IP"
+alias ssh_fisipsec="change_tab_color 12 30 200 && ssh -i ~/.ssh/id_rsa ipiantanida@$FISIPSEC_IP"
+
+alias mount_rivendell="sudo sshfs elrond@rivendell:/data /mnt/rivendell -p 2203 -o allow_other"
+alias umount_rivendell="sudo umount /mnt/rivendell"
