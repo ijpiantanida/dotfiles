@@ -1,33 +1,55 @@
+#Git aliases
 alias gs="git status"
 alias gd="git diff"
 alias ga="git add"
 alias gdc="git diff --cached"
 alias gm="git commit"
+alias gma="git add . && git commit -m "
 alias gl="git lg"
 alias gf="git fetch"
 alias gp="git push"
+alias gd_remote="git push origin :"
+alias gpo='git push --set-upstream origin `git rev-parse --abbrev-ref HEAD`'
 
+#Bash
+alias .="cd .."
 alias ll="ls -al"
-
-alias rtest="RAILS_ENV=test "
-alias rd="ARR_CYCLES_DISABLE=1 rake device install_only=1 hockeyapp=false"
+alias l=ll
 
 alias ttd="termit 'de' 'en' "
 
-alias payango="cd ~/projects/payango"
+#Ruby & Rails
+alias rtest="RAILS_ENV=test "
+alias bi="bundle install"
+
+#Payfriendz & RubyMotion
+alias payfriendz="cd ~/projects/payfriendz"
 alias phrase_pull="phrase pull --format=strings --target resources/"
 alias phrase_push_en="phrase push resources/en.lproj/Localizable.strings --locale=en"
 alias phrase_push_de="phrase push resources/de.lproj/Localizable.strings --locale=de"
-alias sim_small="ARR_CYCLES_DISABLE=1 rake retina=3.5 skip_dsym=1"
+alias sim_small="ARR_CYCLES_DISABLE=1 rake device_name=small skip_dsym=1"
 alias sim="ARR_CYCLES_DISABLE=1 rake skip_dsym=1"
 alias build_distribution="ARR_CYCLES_DISABLE=1 env=distribution apple_env=distribution rake archive:distribution hockey"
+alias rd="ARR_CYCLES_DISABLE=1 rake device install_only=1 hockeyapp=false"
 
+#Payfriendz SSHing
 alias ssh_staging="change_tab_color 151 134 255 && ssh -i ~/.ssh/id_rsa ipiantanida@$STAGING_IP"
 alias ssh_backend="change_tab_color 255 107 84 && ssh -i ~/.ssh/id_rsa ipiantanida@$BACKEND_IP"
 alias ssh_api="change_tab_color 168 187 0 && ssh -i ~/.ssh/id_rsa ipiantanida@$API_IP"
 alias ssh_admin="change_tab_color 90 187 0 && ssh -i ~/.ssh/id_rsa ipiantanida@$ADMIN_IP"
 alias ssh_endpoint="change_tab_color 12 187 80 && ssh -i ~/.ssh/id_rsa ipiantanida@$ENDPOINT_IP"
 alias ssh_fisipsec="change_tab_color 12 30 200 && ssh -i ~/.ssh/id_rsa ipiantanida@$FISIPSEC_IP"
+alias ssh_wfe="change_tab_color 12 30 200 && ssh -i ~/.ssh/id_rsa ipiantanida@$WFE_IP"
+alias ssh_db_master="change_tab_color 82 210 200 && ssh -i ~/.ssh/id_rsa ipiantanida@$DB_MASTER_IP"
+alias ssh_website="change_tab_color 82 130 28 && ssh -i ~/.ssh/id_rsa ipiantanida@$WEBSITE_IP"
+alias ssh_redis_stg="change_tab_color 82 130 28 && ssh -i ~/.ssh/payfriendz_aws_rsa ipiantanida@$STG_REDIS_IP"
 
-alias mount_rivendell="sudo sshfs elrond@rivendell:/data /mnt/rivendell -p 2203 -o allow_other"
-alias umount_rivendell="sudo umount /mnt/rivendell"
+#Social Doors
+alias socialdoors="cd ~/projects/social_doors"
+
+#Ticketmaster
+alias ticketmaster="cd ~/projects/ticketmaster/tmol-web-spring"
+
+#Docker
+alias dc="docker-compose"
+alias dm="docker-machine"

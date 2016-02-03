@@ -56,3 +56,33 @@ function dotit(){
 function with_each_file(){
   find "$1" -type f -print0 | xargs -0 "${@:2}"
 }
+
+function get_pr(){
+  git fetch origin pull/$1/head:$2
+}
+
+#Runs an interactive bash session on a Docker container
+function dbash(){
+  docker exec -ti $1 bash
+}
+
+#Runs an interactive bash session on a Kubernetes container
+function kbash(){
+  kubectl exec -ti $1 bash "${@:2}"
+}
+
+#Social Doors specific.
+#Build the docker image and pushit to gcr
+function sd_docker_build_and_push(){
+  if [ -n "$1" ]; then
+    project_name=$1
+  else
+    project_name=${PWD##*/} #get current folder name
+  fi
+  docker build -t gcr.io/social-doors/$project_name . && \
+  gcloud docker push gcr.io/social-doors/$project_name
+}
+
+function tar_gz(){
+  tar -zcvf $1.tar.gz $1
+}

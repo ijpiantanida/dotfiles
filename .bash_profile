@@ -1,4 +1,3 @@
-
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.bash_env" ]] && source "$HOME/.bash_env"
 source "$HOME/.bash_alias"
@@ -24,8 +23,29 @@ ssh-add ~/.ssh/id_scalarium_user_ignaciopiantanida 2> /dev/null
 
 export DOTFILES_DIR="/Users/ignacio/projects/dotfiles/"
 
+export RUBYMOTION_ANDROID_SDK=/Users/ignacio/.rubymotion-android/sdk
+export RUBYMOTION_ANDROID_NDK=/Users/ignacio/.rubymotion-android/ndk
+export ANDROID_HOME=$RUBYMOTION_ANDROID_SDK
+
+export PATH="$RUBYMOTION_ANDROID_SDK/tools:$RUBYMOTION_ANDROID_SDK/platform-tools:$PATH"
+
 #history setup
 export HISTCONTROL=ignoredups:erasedups
 export HISTSIZE=100000
 export HISTFILESIZE=100000
 shopt -s histappend
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/usr/local/var/google-cloud-sdk/path.bash.inc'
+
+# The next line enables bash completion for gcloud.
+source '/usr/local/var/google-cloud-sdk/completion.bash.inc'
+export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
+
+export PATH="$HOME/.node/bin:$PATH"
+
+eval "$(hub alias -s)"
+
+export SELENIUM_CHROME_DRIVER=/usr/lib/chromedriver
