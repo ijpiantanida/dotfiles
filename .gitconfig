@@ -1,0 +1,26 @@
+[color]
+	ui = true
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	uncommit = reset HEAD^1
+	yesterday = !git log --graph --all --since=\"yesterday.midnight\" --until=\"midnight\" --author=\"$(git config user.name)\" --oneline --color --pretty=format:\"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Creset\" --abbrev-commit
+	pr = "!f(){ git fetch origin \"pull/$1/head:$2\"; }; f"
+[user]
+	name = Ignacio Piantanida
+	email = ijpiantanida@gmail.com
+[core]
+	excludesfile = /Users/ignacio/.gitignore_global
+	editor = subl -n -w
+	pager = diff-so-fancy | less --tabs=4 -RFX
+[push]
+	default = simple
+[merge]
+	tool = sublime
+[mergetool "diffmerge"]
+	cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
+	trustExitCode = true
+[mergetool "sublime"]
+	cmd = subl -w $MERGED
+	trustExitCode = false
+[rebase]
+	autostash = true
