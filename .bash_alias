@@ -4,12 +4,14 @@ alias gd="git diff"
 alias ga="git add"
 alias gdc="git diff --cached"
 alias gm="git commit"
+alias gmt="git -c user.name='Ignacio Piantanida' -c user.email='Ignacio.Piantanida@ticketmaster.com' commit"
 alias gma="git add . && git commit -m "
 alias gl="git lg"
 alias gf="git fetch"
 alias gp="git push"
 alias gd_remote="git push origin :"
 alias gpo='git push --set-upstream origin `git rev-parse --abbrev-ref HEAD`'
+alias gamend='gm --amend --no-edit'
 
 #Bash
 alias .="cd .."
@@ -21,6 +23,9 @@ alias ttd="termit 'de' 'en' "
 #Ruby & Rails
 alias rtest="RAILS_ENV=test "
 alias bi="bundle install"
+
+#Services
+alias start_postgres="postgres -D /usr/local/var/postgres"
 
 #Payfriendz & RubyMotion
 alias payfriendz="cd ~/projects/payfriendz"
@@ -46,10 +51,17 @@ alias ssh_redis_stg="change_tab_color 82 130 28 && ssh -i ~/.ssh/payfriendz_aws_
 
 #Social Doors
 alias socialdoors="cd ~/projects/social_doors"
+alias ionic="./node_modules/ionic/bin/ionic"
 
 #Ticketmaster
-alias ticketmaster="cd ~/projects/ticketmaster/tmol-web-spring"
+alias ticketmaster="cd ~/projects/ticketmaster/tm/ccp-discovery"
+
+#Cardboard
+alias cardboard="cd ~/projects/devjam/cardboard"
 
 #Docker
 alias dc="docker-compose"
 alias dm="docker-machine"
+
+#Claro
+alias portal="cd ~/projects/claro/portal/claro-portal-de-compras"

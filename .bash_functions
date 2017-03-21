@@ -1,7 +1,7 @@
 #Given a Facebook access_token, it prints out the owner's profile
 #Usage: fb access_token
 function fb(){
-  COMMAND="curl https://graph.facebook.com/me?access_token=$1"
+  COeMAND="curl https://graph.facebook.com/me?access_token=$1"
   $COMMAND | python -mjson.tool
 }
 
@@ -10,19 +10,19 @@ function fb(){
 function save_function() {
     local ORIG_FUNC=$(declare -f $1)
     local NEWNAME_FUNC="$2${ORIG_FUNC#$1}"
-    eval "$NEWNAME_FUNC"
+    echo "EVALL |$NEWNAME_FUNC|"
 }
 
-save_function cd _old_cd
-function cd(){
-	change_tab_color 153 153 153
-	if _old_cd "$@"; then
-		[[ -s "$PWD/.iterm" ]] && change_tab_color $(cat "$PWD/.iterm") ;
-        return 0;
-    else
-        return $?;
-    fi	
-}
+# save_function cd _old_cd
+# function cd(){
+# 	change_tab_color 153 153 153
+# 	if _old_cd "$@"; then
+# 		[[ -s "$PWD/.iterm" ]] && change_tab_color $(cat "$PWD/.iterm") ;
+#         return 0;
+#     else
+#         return $?;
+#     fi	
+# }
 
 function change_tab_color(){
 	echo -e -n "\033]6;1;bg;red;brightness;$1\a"
@@ -68,21 +68,36 @@ function dbash(){
 
 #Runs an interactive bash session on a Kubernetes container
 function kbash(){
-  kubectl exec -ti $1 bash "${@:2}"
+  command="kubectl exec -ti $1 --namespace=$2 bash ${@:3}"
+  echo $command
+  $command
 }
 
-#Social Doors specific.
-#Build the docker image and pushit to gcr
-function sd_docker_build_and_push(){
-  if [ -n "$1" ]; then
-    project_name=$1
-  else
-    project_name=${PWD##*/} #get current folder name
-  fi
-  docker build -t gcr.io/social-doors/$project_name . && \
-  gcloud docker push gcr.io/social-doors/$project_name
+function kget() {
+  command="kubectl get pods --namespace=$1 ${@:2}"
+  echo $command
+  $command
 }
 
 function tar_gz(){
-  tar -zcvf $1.tar.gz $1
+  tar -zcf $1.tar.gz $1
+}
+
+function untar_gz(){
+  filename_with_extension=$(basename $1)
+  filename="${filename_with_extension%.tar.gz}"
+  mkdir $filename
+  tar -zxf $1 -C $filename
+}
+
+#Restarts the sound service when there're problems
+function restart_sound() {
+  sudo kill -9 `ps ax|grep 'coreaudio[a-z]' | awk '{print $1}'`
+}
+
+function mixit_audio() {
+  filename_with_extension=$(basename $1)
+  filename="${filename_with_extension%.*}"
+  #ffmpeg -i $1 -map_channel 0.0.0 "$filename-left.wav" -map_channel 0.0.1 "$filename-right.wav"
+  ffmpeg -i $1 -map_channel 0.0.1 "$filename-mixed.mp3"
 }
