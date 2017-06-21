@@ -65,3 +65,4 @@ alias dm="docker-machine"
 
 #Claro
 alias portal="cd ~/projects/claro/portal/claro-portal-de-compras"
+alias oracle_start="docker run -d -p 8090:8080 -p 1521:1521 -v ~/projects/claro/portal/oracle/data:/u01/app/oracle sath89/oracle-xe-11g"

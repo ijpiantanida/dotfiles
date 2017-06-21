@@ -101,3 +101,7 @@ function mixit_audio() {
   #ffmpeg -i $1 -map_channel 0.0.0 "$filename-left.wav" -map_channel 0.0.1 "$filename-right.wav"
   ffmpeg -i $1 -map_channel 0.0.1 "$filename-mixed.mp3"
 }
+
+function mount_passport() {
+  sudo /usr/local/bin/ntfs-3g /dev/disk2s1 /Volumes/NTFS -olocal -oallow_other
+}
