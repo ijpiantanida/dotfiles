@@ -8,9 +8,9 @@ function fb(){
 #Renames a function
 #Usage: save_function function_name new_function_name
 function save_function() {
-    local ORIG_FUNC=$(declare -f $1)
-    local NEWNAME_FUNC="$2${ORIG_FUNC#$1}"
-    echo "EVALL |$NEWNAME_FUNC|"
+  local ORIG_FUNC=$(declare -f $1)
+  local NEWNAME_FUNC="$2${ORIG_FUNC#$1}"
+  echo "EVALL |$NEWNAME_FUNC|"
 }
 
 # save_function cd _old_cd
@@ -104,4 +104,16 @@ function mixit_audio() {
 
 function mount_passport() {
   sudo /usr/local/bin/ntfs-3g /dev/disk2s1 /Volumes/NTFS -olocal -oallow_other
+}
+
+function gri() {
+  git rebase -i $1~1
+}
+
+function localserver() {
+  python -m http.server 7070
+}
+
+function every() {
+  while :; do "${@:2}"; sleep $1; done
 }

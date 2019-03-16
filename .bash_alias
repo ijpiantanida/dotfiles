@@ -1,7 +1,7 @@
 #Git aliases
 alias gs="git status"
 alias gd="git diff"
-alias ga="git add"
+alias ga="git add -A"
 alias gdc="git diff --cached"
 alias gm="git commit"
 alias gmt="git -c user.name='Ignacio Piantanida' -c user.email='Ignacio.Piantanida@ticketmaster.com' commit"
@@ -57,7 +57,12 @@ alias ionic="./node_modules/ionic/bin/ionic"
 alias ticketmaster="cd ~/projects/ticketmaster/tm/ccp-discovery"
 
 #Cardboard
-alias cardboard="cd ~/projects/devjam/cardboard"
+alias cardboard="cd ~/projects/sep/cardboard"
+
+#Grubhub
+alias gfr="cd ~/projects/grubhub/gfr"
+alias garweb="docker run --rm --name garweb -it -v ~/.ghconfig:/root/.ghconfig -p 8080:8080 --entrypoint "/bin/bash" garcli -c garweb"
+alias garcli="docker run --rm --name garcli -it -v ~/.ghconfig:/root/.ghconfig garcli"
 
 #Docker
 alias dc="docker-compose"
@@ -66,3 +71,6 @@ alias dm="docker-machine"
 #Claro
 alias portal="cd ~/projects/claro/portal/claro-portal-de-compras"
 alias oracle_start="docker run -d -p 8090:8080 -p 1521:1521 -v ~/projects/claro/portal/oracle/data:/u01/app/oracle sath89/oracle-xe-11g"
+
+#Botty
+alias portal="cd ~/projects/botty"
