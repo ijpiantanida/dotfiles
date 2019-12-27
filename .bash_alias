@@ -11,7 +11,7 @@ alias gf="git fetch"
 alias gp="git push"
 alias gd_remote="git push origin :"
 alias gpo='git push --set-upstream origin `git rev-parse --abbrev-ref HEAD`'
-alias gamend='gm --amend --no-edit'
+alias gamend='gm --amend --no-edit --reset-author'
 
 #Bash
 alias .="cd .."
@@ -61,8 +61,10 @@ alias cardboard="cd ~/projects/sep/cardboard"
 
 #Grubhub
 alias gfr="cd ~/projects/grubhub/gfr"
-alias garweb="docker run --rm --name garweb -it -v ~/.ghconfig:/root/.ghconfig -p 8080:8080 --entrypoint "/bin/bash" garcli -c garweb"
-alias garcli="docker run --rm --name garcli -it -v ~/.ghconfig:/root/.ghconfig garcli"
+#alias garweb="docker run --rm --name garweb -it -v ~/.ghconfig:/root/.ghconfig -p 8080:8080 --entrypoint "/bin/bash" garcli -c garweb"
+#alias garcli="docker run --rm --name garcli -it -v ~/.ghconfig:/root/.ghconfig garcli"
+alias gardev='PYTHONPATH=/Users/ignacio/projects/grubhub/ghpylibs/python:/Users/ignacio/projects/grubhub/garcli/src /Users/ignacio/projects/grubhub/garcli/bin/garcli'
+alias garwebdev='PYTHONPATH=/Users/ignacio/projects/grubhub/ghpylibs/python:/Users/ignacio/projects/grubhub/garcli/src /Users/ignacio/projects/grubhub/garcli/bin/garweb'
 
 #Docker
 alias dc="docker-compose"

@@ -111,9 +111,13 @@ function gri() {
 }
 
 function localserver() {
-  python -m http.server 7070
+  python -m SimpleHTTPServer 7070
 }
 
 function every() {
   while :; do "${@:2}"; sleep $1; done
+}
+
+function port() {
+  lsof -i :$1
 }

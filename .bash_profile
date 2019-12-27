@@ -47,7 +47,8 @@ export JAVA_TOOL_OPTIONS=-Dcom.amazonaws.sdk.ec2MetadataServiceEndpointOverride=
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 #Grubhub
-export PATH=${PATH}:/Users/ignacio/projects/grubhub/dockhub
+export PATH=${PATH}:/Users/ignacio/projects/grubhub/dockhub/bin
+export PYTHONPATH=/Users/ignacio/projects/grubhub/ghpylibs/python:/Users/ignacio/projects/grubhub/garcli/src
 
 [[ -s "$HOME/.bash_functions" ]] && source ~/.bash_functions
 
@@ -65,3 +66,5 @@ if [ -f '/Users/ignacio/tools/google-cloud-sdk/completion.bash.inc' ]; then sour
 HEROKU_AC_BASH_SETUP_PATH=/Users/ignacio/Library/Caches/heroku/autocomplete/bash_setup && test -f $HEROKU_AC_BASH_SETUP_PATH && source $HEROKU_AC_BASH_SETUP_PATH;
 
 eval "$(direnv hook bash)"
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
