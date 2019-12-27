@@ -3,3 +3,4 @@ ln -s "/Users/ignacio/projects/dotfiles///.bash_functions" "/Users/ignacio/.bash
 ln -s "/Users/ignacio/projects/dotfiles///.bash_profile" "/Users/ignacio/.bash_profile"
 ln -s "/Users/ignacio/projects/dotfiles///.bashrc" "/Users/ignacio/.bashrc"
 ln -s "/Users/ignacio/projects/dotfiles////Users/ignacio/.ssh/config" "/Users/ignacio/projects/dotfiles//Users/ignacio/.ssh/config"
+ln -s "/Users/ignacio/projects/dotfiles///.zshrc" "/Users/ignacio/.zshrc"
