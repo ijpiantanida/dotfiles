@@ -4,3 +4,4 @@ ln -s "/Users/ignacio/projects/dotfiles///.bash_profile" "/Users/ignacio/.bash_p
 ln -s "/Users/ignacio/projects/dotfiles///.bashrc" "/Users/ignacio/.bashrc"
 ln -s "/Users/ignacio/projects/dotfiles////Users/ignacio/.ssh/config" "/Users/ignacio/projects/dotfiles//Users/ignacio/.ssh/config"
 ln -s "/Users/ignacio/projects/dotfiles///.zshrc" "/Users/ignacio/.zshrc"
+ln -s "/Users/ignacio/projects/dotfiles////usr/local/bin/gh_uuid" "/Users/ignacio//usr/local/bin/gh_uuid"
