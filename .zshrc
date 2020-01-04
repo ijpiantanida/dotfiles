@@ -90,10 +90,15 @@ export LDFLAGS="-L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib -L/
 export CPPFLAGS="-I/usr/local/opt/llvm/include -I/usr/local/opt/openssl/include"
 export EDITOR="nano"
 
-eval "$(direnv hook bash)"
+eval "$(direnv hook zsh)"
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
-
+eval "$(pyenv init -)"
+eval "$(rbenv init -)"
 
 #Grubhub
 export PATH=${PATH}:/Users/ignacio/projects/grubhub/dockhub/bin
+
+# Don't share history between tab sessions
+unsetopt inc_append_history
+unsetopt share_history
