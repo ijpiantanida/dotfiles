@@ -103,7 +103,25 @@ function mixit_audio() {
 }
 
 function mount_passport() {
-  sudo /usr/local/bin/ntfs-3g /dev/disk2s1 /Volumes/NTFS -olocal -oallow_other
+  dirToMount="/Volumes/NTFS"
+  deviceNode=$(diskutil info PASSPORT | grep Node | tr -s " " | cut -d " " -f 4)
+  echo "Mounting $deviceNode at $dirToMount"
+  sudo /usr/local/bin/ntfs-3g $deviceNode $dirToMount -olocal -oallow_other -o auto_xattr
+}
+
+function sync_passport_dir() {
+  if [ "$#" -ne 2 ]; then
+    echo "Illegal number of parameters"
+    echo "Usage: sync_passport_dir source_dir dest_dir"
+    return -1
+  fi
+  if [[ $1 != */ || $2 != */ ]]; then
+    echo "source_dir and dest_dir should end with /"
+    return -1
+  fi
+  command="sudo rsync -avlptrc $1 $2"
+  echo "$command\n"
+  eval $command
 }
 
 function gri() {
