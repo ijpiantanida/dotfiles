@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/ignacio/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -80,10 +80,10 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 [[ -s "$HOME/.bash_functions" ]] && source ~/.bash_functions
 [[ -s "$HOME/.bash_alias" ]] && source "$HOME/.bash_alias"
 
-export DOTFILES_DIR="/Users/ignacio/projects/dotfiles/"
+export DOTFILES_DIR="$HOME/projects/dotfiles/"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="~/.config/yarn/global/node_modules/.bin:$PATH"
-export N_PREFIX=/Users/ignacio/.n/
+export N_PREFIX=$HOME/.n/
 export PATH="$N_PREFIX/bin:$PATH"
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
@@ -98,7 +98,7 @@ eval "$(pyenv init -)"
 eval "$(rbenv init -)"
 
 #Grubhub
-export PATH=${PATH}:/Users/ignacio/projects/grubhub/dockhub/bin
+export PATH=${PATH}:$HOME/projects/grubhub/dockhub/bin
 
 # Don't share history between tab sessions
 unsetopt inc_append_history

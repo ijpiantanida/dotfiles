@@ -4,7 +4,6 @@ alias gd="git diff"
 alias ga="git add -A"
 alias gdc="git diff --cached"
 alias gm="git commit"
-alias gmt="git -c user.name='Ignacio Piantanida' -c user.email='Ignacio.Piantanida@ticketmaster.com' commit"
 alias gma="git add . && git commit -m "
 alias gl="git lg"
 alias gf="git fetch"
@@ -23,8 +22,8 @@ alias rtest="RAILS_ENV=test "
 alias bi="bundle install"
 
 #Grubhub
-alias gardev='PYTHONPATH=/Users/ignacio/projects/grubhub/ghpylibs/python:/Users/ignacio/projects/grubhub/garcli/src /Users/ignacio/projects/grubhub/garcli/bin/garcli'
-alias garwebdev='PYTHONPATH=/Users/ignacio/projects/grubhub/ghpylibs/python:/Users/ignacio/projects/grubhub/garcli/src /Users/ignacio/projects/grubhub/garcli/bin/garweb'
+alias gardev='PYTHONPATH=$HOME/projects/grubhub/ghpylibs/python:$HOME/projects/grubhub/garcli/src $HOME/projects/grubhub/garcli/bin/garcli'
+alias garwebdev='PYTHONPATH=$HOME/projects/grubhub/ghpylibs/python:$HOME/projects/grubhub/garcli/src $HOME/projects/grubhub/garcli/bin/garweb'
 
 #Docker
 alias dc="docker-compose"
