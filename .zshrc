@@ -94,12 +94,12 @@ export EDITOR="nano"
 eval "$(direnv hook zsh)"
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
+eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 eval "$(rbenv init -)"
 
 #Grubhub
 export PATH=${PATH}:$HOME/projects/grubhub/dockhub/bin
 
-# Don't share history between tab sessions
-unsetopt inc_append_history
-unsetopt share_history
+# Poetry: Pyathon packet manager
+export PATH="$HOME/.poetry/bin:$PATH"
