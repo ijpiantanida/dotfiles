@@ -24,3 +24,5 @@
 	trustExitCode = false
 [rebase]
 	autostash = true
+[includeIf "gitdir:~/projects/grubhub/"]
+    path = ~/projects/grubhub/gitconfig-grubhub
