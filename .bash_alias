@@ -14,7 +14,7 @@ alias gamend='gm --amend --no-edit --reset-author'
 
 #Bash
 alias .="cd .."
-alias ll="ls -al"
+alias ll="ls -alh"
 alias l=ll
 
 #Ruby & Rails
