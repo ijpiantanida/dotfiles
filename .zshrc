@@ -97,9 +97,3 @@ eval "$(jenv init -)"
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 eval "$(rbenv init -)"
-
-#Grubhub
-export PATH=${PATH}:$HOME/projects/grubhub/dockhub/bin
-
-# Poetry: Pyathon packet manager
-export PATH="$HOME/.poetry/bin:$PATH"

@@ -21,10 +21,6 @@ alias l=ll
 alias rtest="RAILS_ENV=test "
 alias bi="bundle install"
 
-#Grubhub
-alias gardev='PYTHONPATH=$HOME/projects/grubhub/ghpylibs/python:$HOME/projects/grubhub/garcli/src $HOME/projects/grubhub/garcli/bin/garcli'
-alias garwebdev='PYTHONPATH=$HOME/projects/grubhub/ghpylibs/python:$HOME/projects/grubhub/garcli/src $HOME/projects/grubhub/garcli/bin/garweb'
-
 #Docker
 alias dc="docker-compose"
 alias dm="docker-machine"
