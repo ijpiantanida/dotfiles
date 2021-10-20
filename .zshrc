@@ -91,9 +91,11 @@ export LDFLAGS="-L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib -L/
 export CPPFLAGS="-I/usr/local/opt/llvm/include -I/usr/local/opt/openssl/include"
 export EDITOR="nano"
 
-eval "$(direnv hook zsh)"
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
-eval "$(rbenv init -)"
+[ -x "$(command -v direnv)" ] && eval "$(direnv hook zsh)"
+
+if [ -x "$(command -v jenv)" ]; then
+	export PATH="$HOME/.jenv/bin:$PATH"
+ 	eval "$(jenv init -)"
+fi
+[ -x "$(command -v pyenv)" ] && eval "$(pyenv init -)"
+[ -x "$(command -v rbenv)" ] && eval "$(rbenv init -)"
