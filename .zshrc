@@ -72,7 +72,8 @@ ZSH_THEME="candy"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+eval "$(/opt/homebrew/bin/brew shellenv)"
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # User configuration
 
