@@ -82,7 +82,9 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export DOTFILES_DIR="$HOME/projects/dotfiles/"
 export PATH="/usr/local/sbin:$PATH"
+export PATH="/Users/ignacio/.local/bin:$PATH"
 export PATH="~/.config/yarn/global/node_modules/.bin:$PATH"
+
 export N_PREFIX=$HOME/.n/
 export PATH="$N_PREFIX/bin:$PATH"
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"

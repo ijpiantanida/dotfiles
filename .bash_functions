@@ -106,7 +106,7 @@ function mount_passport() {
   dirToMount="/Volumes/NTFS"
   deviceNode=$(diskutil info PASSPORT | grep Node | tr -s " " | cut -d " " -f 4)
   echo "Mounting $deviceNode at $dirToMount"
-  sudo /usr/local/bin/ntfs-3g $deviceNode $dirToMount -olocal -oallow_other -o auto_xattr
+  sudo mount -t ntfs -o rw,auto,nobrowse $deviceNode $dirToMount
 }
 
 function sync_passport_dir() {
