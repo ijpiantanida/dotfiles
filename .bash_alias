@@ -24,3 +24,6 @@ alias bi="bundle install"
 #Docker
 alias dc="docker-compose"
 alias dm="docker-machine"
+
+#Seed
+alias box="sftp -P 2094 seedit4me@nl57.seedit4.me"
